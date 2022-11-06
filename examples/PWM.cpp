@@ -1,7 +1,9 @@
 /*
-  main.cpp
+  pwm.cpp
   Tauno Erik
   06.11.2022
+
+ ESP32 PWM example. LEDS fadin and out. 3 LEDS connected to 3 different LED channels.
 */
 #include <Arduino.h>
 
@@ -43,7 +45,7 @@ void loop() {
   // decrease the LED brightness
   for(int dutyCycle = 255; dutyCycle >= 0; dutyCycle--){
     // changing the LED brightness with PWM
-    ledcWrite(CH_0, dutyCycle);   
+    ledcWrite(CH_0, dutyCycle);
     delay(15);
   }
 
@@ -57,7 +59,7 @@ void loop() {
   // decrease the LED brightness
   for(int dutyCycle = 255; dutyCycle >= 0; dutyCycle--){
     // changing the LED brightness with PWM
-    ledcWrite(CH_1, dutyCycle);   
+    ledcWrite(CH_1, dutyCycle);
     delay(15);
   }
 
@@ -71,12 +73,12 @@ void loop() {
   // decrease the LED brightness
   for(int dutyCycle = 255; dutyCycle >= 0; dutyCycle--){
     // changing the LED brightness with PWM
-    ledcWrite(CH_2, dutyCycle);   
+    ledcWrite(CH_2, dutyCycle);
     delay(15);
   }
 
-  ledcWrite(CH_0, 20);
-  ledcWrite(CH_1, 200);
-  ledcWrite(CH_2, 20);
+  ledcWrite(CH_0, 50);
+  ledcWrite(CH_1, 100);
+  ledcWrite(CH_2, 200);
   delay(2000);
 }
